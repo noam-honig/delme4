@@ -20,10 +20,20 @@ export class TodoComponent implements OnInit {
       completed: false
     });
     this.title = '';
+    this.save();
+  }
+  save() {
+    localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
 
   ngOnInit(): void {
+    const store = localStorage.getItem("tasks");
+    if (store) {
+      this.tasks = JSON.parse(store);
+    }
+
     console.table(this.tasks);
+
   }
 
 }
