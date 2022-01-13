@@ -10,10 +10,10 @@ npm i -g @angular/cli
 ng new angular-intro
 ```  
 
-* review the `package.json` file
-* Review angular project file structure
-* Create angular components, and routes.
-* Style using Angular Material
+* V review the `package.json` file
+* V Review angular project file structure
+* V Create angular components, and routes.
+* V Style using Angular Material
 * Create an in browser todo app, using local storage
 * Deploy it to the web
 
