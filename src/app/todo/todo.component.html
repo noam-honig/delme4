@@ -3,12 +3,21 @@
     <mat-label>New task title</mat-label>
     <input matInput [(ngModel)]="title">
   </mat-form-field>
-  <button mat-button (click)="add()">Add</button>
+  
+  <button mat-icon-button (click)="add()">
+    <mat-icon>
+      add
+    </mat-icon>
+  </button>
   <mat-list role="list">
     <mat-list-item *ngFor="let task of tasks">
       <mat-slide-toggle [(ngModel)]="task.completed" (change)="save()">
-        {{task.title}} <button mat-button (click)="deleteTask(task)">Delete</button>
+        {{task.title}}
       </mat-slide-toggle>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="deleteTask(task)">
+        <mat-icon> delete</mat-icon>
+      </button>
     </mat-list-item>
   </mat-list>
 </mat-card>
