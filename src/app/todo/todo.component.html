@@ -1,8 +1,10 @@
 <mat-card style="margin: 14px;">
-    <p>{{title}}  {{7*6}}</p>
-    <mat-list role="list">
-        <mat-list-item role="listitem">Item 1</mat-list-item>
-        <mat-list-item role="listitem">Item 2</mat-list-item>
-        <mat-list-item role="listitem">Item 3</mat-list-item>
-      </mat-list>
+  <p>{{title}} {{7*6}}</p>
+  <mat-list role="list">
+    <mat-list-item *ngFor="let task of tasks">
+      <mat-slide-toggle [(ngModel)]="task.completed">
+        {{task.title}} - {{task.completed}}
+      </mat-slide-toggle>
+    </mat-list-item>
+  </mat-list>
 </mat-card>

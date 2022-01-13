@@ -7,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  title:string = 'What is the meaning of life?';
+  title: string = 'What is the meaning of life?';
+  tasks: Task[] = [
+    { title: "Task a", completed: false },
+    { title: "Task b", completed: true },
+    { title: "Task c", completed: false }
+  ];
   constructor() { }
 
   ngOnInit(): void {
+    console.table(this.tasks);
   }
 
+}
+interface Task {
+  title: string;
+  completed: boolean;
 }
