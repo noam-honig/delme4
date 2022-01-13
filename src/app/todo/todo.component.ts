@@ -25,6 +25,10 @@ export class TodoComponent implements OnInit {
   save() {
     localStorage.setItem("tasks", JSON.stringify(this.tasks));
   }
+  deleteTask(taskToDelete: Task) {
+    this.tasks = this.tasks.filter(task => task != taskToDelete);
+    this.save();
+  }
 
   ngOnInit(): void {
     const store = localStorage.getItem("tasks");
